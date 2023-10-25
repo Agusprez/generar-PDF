@@ -7,9 +7,9 @@ import traceback
 import os
 
 # Define la variable rutaArch en el ámbito global
-#rutaArch = "C:/tribu1/LIQUI/ESTUDIO"
+rutaArch = "Z:/tribu1/ESTUDIO1"
 
-rutaArch = "C:/Users/perez/OneDrive/Escritorio/Modulos para pdf/Generar PDF - Libro de sueldos/ESTUDIO1"
+#rutaArch = "C:/Users/perez/OneDrive/Escritorio/Modulos para pdf/Generar PDF - Libro de sueldos/ESTUDIO1"
 dir_actual = os.path.dirname(__file__)
 
 def main():
@@ -26,6 +26,7 @@ def main():
         # Captura y muestra cualquier excepción
         traceback.print_exc()
         input("Presiona Enter para salir...")
+
 def texto_a_pdf(archivo_txt, archivo_pdf):
     # Abre el archivo de texto para lectura
     with open(archivo_txt, 'r') as archivo:
@@ -42,19 +43,19 @@ def texto_a_pdf(archivo_txt, archivo_pdf):
 
     
     # Configura la fuente "Courier New" y el tamaño de fuente
-    c.setFont('Courier-Bold', 9)
+    c.setFont('Courier-Bold', 8.5)
 
     # Calcula el ancho y alto de la página A4 en orientación horizontal
     ancho, alto = (A4)
 
-# Divide las líneas en grupos de 63
-    grupos_lineas = [lineas[i:i+63] for i in range(0, len(lineas), 63)]
+# Divide las líneas en grupos de 70
+    grupos_lineas = [lineas[i:i+70] for i in range(0, len(lineas), 70)]
 
     for grupo in grupos_lineas:
         # Inicializa la posición de escritura en la página
-        x, y = 80, alto - 150
+        x, y = 88, alto - 120
         # Configura la fuente "Courier-Bold" y el tamaño de fuente
-        c.setFont('Courier-Bold', 9)
+        c.setFont('Courier-Bold', 8.5)
 
         # Agrega cada línea al PDF
         for linea in grupo:
